@@ -1,0 +1,167 @@
+/**
+ * Custom theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+// Override theme settings (see ../template/settings.scss)
+$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+$adobe-gray: rgb(107, 115, 123);
+$adobe-dark-gray: darken($adobe-gray, 30%);
+
+body {
+  /* background */
+  background: $adobe-dark-gray;
+}
+
+.reveal {
+
+  h1 {
+    /* text */
+    font-size: 3em;
+  }
+
+  h1, h2, h3, h4, h5 {
+    /* text */
+    font-family: "museo-sans-condensed", "Museo Sans Condensed", "Museo Sans", sans-serif;
+    font-weight: 900;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+
+    word-wrap: normal;
+  }
+
+  section {
+    /* text */
+    font-family: "Adobe Clean", "source-sans-pro", "Source Sans Pro", sans-serif;
+  }
+
+  section.light-background {
+    h1, h2, h3, h4, h5 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    a, p {
+      color: $adobe-dark-gray;
+    }
+
+    a:hover {
+      color: $adobe-gray;
+    }
+  }
+
+  section img {
+    /* box */
+    border: none;
+    height: 300px;
+
+    /* background */
+    background: transparent;
+
+    /* effects */
+    box-shadow: none;
+  }
+
+  .tight {
+    line-height: 24px;
+  }
+
+  .disabled {
+    color: gray;
+  }
+
+  .pixel-moving-image {
+    -webkit-transform: rotateZ(45deg) scale(0.65);
+    -moz-transform: rotateZ(45deg) scale(0.65);
+    -ms-transform: rotateZ(45deg) scale(0.65);
+    transform: rotateZ(45deg) scale(0.65);
+  }
+
+  .shading-image {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+
+
+  /* Example Button */
+
+  .example-button {
+    /* box */
+    display: inline-block;
+    margin-top: 50px;
+
+    /* effects */
+    -webkit-filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+
+    /* transform */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+
+    /* children */
+    .link {
+      /* box */
+      display: block;
+      box-sizing: content-box;
+      padding: 0;
+      border: 5px solid white;
+      border-radius: 100px;
+      width: 300px;
+      height: 100px;
+
+      /* background */
+      background-color: #333;
+
+      /* text */
+      font-size: 0; /* Remove inline block spaces. */
+      text-align: left;
+
+      /* overflow */
+      overflow: hidden;
+    }
+
+    .link:hover {
+      /* box */
+      border: 5px solid white;
+    }
+
+    .thumbnail {
+      /* box */
+      margin: 0;
+      height: 100px;
+      max-height: 100px;
+      max-width: 100px;
+    }
+
+    .title {
+      /* box */
+      display: inline-block;
+      box-sizing: border-box;
+      width: 200px;
+
+      /* text */
+      color: white;
+      font-size: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 100px;
+      vertical-align: top;
+    }
+  }
+}
