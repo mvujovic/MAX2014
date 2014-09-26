@@ -428,9 +428,23 @@
         </section>
 
         <section>
-          <h2>CSS Height Animation</h2>
+          <h2>Example Site</h2>
+          <img style="width: 800px; height: auto;" src="assets/images/sample-site-screenshot.png"/>
+        </section>
+
+        <section>
+          <h3>Animating CSS Height</h3>
+          <p>
+            <video src="assets/videos/height-animation.mp4" controls></video>
+          </p>
+          <h3>Animating CSS Transform</h3>
+          <video src="assets/videos/transform-animation.mp4" controls></video>
+        </section>
+
+        <section>
+          <h2>Animating CSS Height</h2>
           <pre><code data-trim contenteditable>
-.some-element {
+header {
   transition: height ease-in 1s;
 }
 
@@ -450,8 +464,8 @@
         </section>
 
         <section>
-          <h2>CSS Height Animation</h2>
-          <p>Every frame, the browser has to do almost every step:</p>
+          <h2>Animating CSS Height</h2>
+          <p>Every frame, the browser has to do almost every costly step:</p>
           <ol>
             <li class="disabled">Parsing</li>
             <li>Layout</li>
@@ -467,9 +481,9 @@
         </section>
 
         <section>
-          <h2>CSS Transform Animation</h2>
+          <h2>Animating CSS Transform</h2>
           <pre><code data-trim contenteditable>
-.some-element {
+body {
   transition: transform ease-in 1s;
 }
 
@@ -494,7 +508,7 @@
         </section>
 
         <section>
-          <h2>CSS Transform Animation</h2>
+          <h2>Animating CSS Transform</h2>
           <p>Every frame, the browser can skip many costly steps:</p>
           <ol>
             <li class="disabled">Parsing</li>
@@ -540,9 +554,8 @@
           <p>
             <ul>
               <li>move, rotate, scale</li>
-              <li>opacity</li>
+              <li>adjust opacity</li>
               <li>blur, drop-shadow, grayscale, etc.</li>
-              <li>blend modes</li>
               <li>any creative combination of the above</li>
             </ul>
           </p>
@@ -556,7 +569,6 @@
               <li>transform</li>
               <li>opacity</li>
               <li>filter</li>
-              <li>mix-blend-mode (new!)</li>
             </ul>
           </p>
         </section>
