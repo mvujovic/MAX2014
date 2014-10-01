@@ -154,7 +154,9 @@ body {
   .reveal section {
     /* text */
     font-family: "Adobe Clean", "source-sans-pro", "Source Sans Pro", sans-serif; }
-  .reveal section.light-background h1, .reveal section.light-background h2, .reveal section.light-background h3, .reveal section.light-background h4, .reveal section.light-background h5 {
+  .reveal section.light-background h1 {
+    text-shadow: 4px 4px 10px black; }
+  .reveal section.light-background h2, .reveal section.light-background h3, .reveal section.light-background h4, .reveal section.light-background h5 {
     text-shadow: 2px 2px 4px black; }
   .reveal section.light-background a, .reveal section.light-background p {
     color: #242729; }
