@@ -139,6 +139,7 @@ body {
   background: #242729; }
 
 .reveal {
+  /* Lifecycle Progress Bar */
   /* Example Button */ }
   .reveal h1 {
     /* text */
@@ -182,6 +183,12 @@ body {
   .reveal .shading-image {
     -webkit-filter: grayscale(1);
     filter: grayscale(1); }
+  .reveal .lifecycle {
+    width: 1200px;
+    height: auto; }
+  .reveal .lifecycle-thumbnail {
+    width: 300px;
+    height: auto; }
   .reveal .example-button {
     /* box */
     display: inline-block;

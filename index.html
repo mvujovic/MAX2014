@@ -326,6 +326,7 @@
 
         <section>
           <h2>Lifecycle of a Hardware Accelerated Element</h2>
+          <img class="lifecycle" src="assets/images/lifecycle.svg"/>
         </section>
 
         <section>
@@ -368,6 +369,7 @@
               <li>Let's assume the element is hardware accelerated.</li>
             </ul>
           </p>
+          <img class="lifecycle-thumbnail" src="assets/images/lifecycle-hw-accel.svg"/>
         </section>
 
         <section>
@@ -425,6 +427,10 @@
           <img src="assets/images/example-button-compositing.png"/>
         </section>
 
+        <section>
+          <img class="lifecycle" src="assets/images/lifecycle.svg"/>
+        </section>
+
         <section data-background="rgb(0, 164, 228)">
           <h2>CSS Animation Performance</h2>
         </section>
@@ -475,24 +481,13 @@ header {
 
         <section>
           <h2>Appearance Changes</h2>
-          <p>Every frame, the element's size and internal appearance changes.</p>
+          <p>Every frame, the element's size and contents change.</p>
         </section>
 
         <section>
           <h2>Animating CSS Height</h2>
-          <p>Every frame, the browser has to do almost every costly step:</p>
-          <ol>
-            <li class="disabled">Parsing</li>
-            <li>Layout</li>
-            <li>Determine Hardware Acceleration</li>
-            <li>Painting</li>
-            <li>Synchronization</li>
-            <li>Geometry Construction</li>
-            <li>Screen Positioning</li>
-            <li>Texturing</li>
-            <li>Special Effects</li>
-            <li>Compositing</li>
-          </ol>
+          <p>Every frame, the browser has to do almost every costly step.</p>
+          <img class="lifecycle" src="assets/images/lifecycle-height-animation.svg"/>
         </section>
 
         <section>
@@ -516,7 +511,7 @@ body {
           <h2>Constant Appearance</h2>
           <p>
             <ul>
-              <li>Every frame, the element's size and internal appearance stays the same.</li>
+              <li>Every frame, the element's size and contents stay the same.</li>
               <li>Only its position on the screen changes.</li>
             </ul>
           </p>
@@ -524,19 +519,8 @@ body {
 
         <section>
           <h2>Animating CSS Transform</h2>
-          <p>Every frame, the browser can skip many costly steps:</p>
-          <ol>
-            <li class="disabled">Parsing</li>
-            <li class="disabled">Layout</li>
-            <li class="disabled">Determine Hardware Acceleration</li>
-            <li class="disabled">Painting</li>
-            <li class="disabled">Synchronization</li>
-            <li>Geometry Construction</li>
-            <li>Screen Positioning</li>
-            <li>Texturing</li>
-            <li>Special Effects</li>
-            <li>Compositing</li>
-          </ol>
+          <p>Every frame, the browser can skip many costly steps.</p>
+          <img class="lifecycle" src="assets/images/lifecycle-transform-animation.svg"/>
         </section>
 
         <section>
