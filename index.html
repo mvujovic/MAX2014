@@ -95,6 +95,7 @@
               <li>Hardware</li>
               <li>How Browsers Draw Web Pages</li>
               <li>CSS Animation Performance</li>
+              <li>Key Takeaways</li>
             </ol>
           </p>
         </section>
@@ -313,15 +314,92 @@
         </section>
 
         <section>
-          <h2>Acceleration Triggers</h2>
-          <p>
-            <ul>
-              <li>CSS 3D Transforms.</li>
-              <li>Animating opacity, transform, or filter using CSS.</li>
-              <li>Overlap with hardware accelerated elements.</li>
-              <li>And more.</li>
-            </ul>
-          </p>
+          <h2>will-change</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  will-change: transform;
+}
+          </code></pre>
+          <p>Causes hardware acceleration.</p>
+        </section>
+
+        <section>
+          <h2>3D Transforms</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  transform: translate3d(0, 0, 0);
+}
+          </code></pre>
+          <p>Cause hardware acceleration.</p>
+        </section>
+
+        <section>
+          <h2>2D Transforms</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  transform: translate(0, 0);
+}
+          </code></pre>
+          <p>Don't cause hardware acceleration, unless animated.</p>
+        </section>
+
+        <section>
+          <h2>Transform Animation</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  transition: transform linear 1s;
+}
+
+.initial {
+  transform: translate(0, 0);
+}
+
+.final {
+  transform: translate(100px, 100px);
+}
+          </code></pre>
+          <p>Causes hardware acceleration during the animation.</p>
+        </section>
+
+        <section>
+          <h2>Opacity Animation</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  transition: opacity linear 1s;
+}
+
+.initial {
+  opacity: 0;
+}
+
+.final {
+  opacity: 1;
+}
+          </code></pre>
+          <p>Causes hardware acceleration during the animation.</p>
+        </section>
+
+        <section>
+          <h2>Filter Animation</h2>
+          <pre><code data-trim contenteditable>
+#some-element {
+  transition: filter linear 1s;
+}
+
+.initial {
+  filter: grayscale(0);
+}
+
+.final {
+  filter: grayscale(1);
+}
+          </code></pre>
+          <p>Causes hardware acceleration during the animation.</p>
+        </section>
+
+        <section>
+          <h2>Overlap</h2>
+          <p>When an element appears on top of a hardware accelerated element, it also becomes hardware accelerated.</p>
         </section>
 
         <section>
@@ -536,8 +614,12 @@ body {
           <h2>Live Demo</h2>
         </section>
 
+        <section data-background="rgb(0, 164, 228)">
+          <h2>Key Takeaways</h2>
+        </section>
+
         <section>
-          <h2>Design Takeaways</h2>
+          <h2>Design for the GPU</h2>
           <p>Design animations and transitions intended for the GPU:</p>
           <p>
             <ul>
@@ -550,7 +632,7 @@ body {
         </section>
 
         <section>
-          <h2>Coding Takeaways</h2>
+          <h2>Code for the GPU</h2>
           <p>Animate CSS properties intended for the GPU:</p>
           <p>
             <ul>
@@ -558,6 +640,37 @@ body {
               <li>opacity</li>
               <li>filter</li>
             </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>Reduce Start Up Time</h2>
+          <p>Hardware accelerate elements before an animation to remove initial CPU work.</p>
+          <pre><code data-trim contenteditable>
+#commonly-animated-element {
+  /* Force acceleration on current browsers. */
+  transform: translateZ(0);
+
+  /* Force acceleration on future browsers. */
+  will-change: transform;
+
+  transition: transform linear 1s;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Trust the Browser</h2>
+          <p>Don't hardware accelerate everything. It wastes GPU memory.</p>
+        </section>
+
+        <section>
+          <h2>More Reading</h2>
+          <p>
+            <a href="https://dev.opera.com/articles/css-will-change-property/">CSS Will Change Property</a>
+          </p>
+          <p>
+            <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">CSS Animations and Transitions Performance</a>
           </p>
         </section>
 
